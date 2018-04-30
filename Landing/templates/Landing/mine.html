@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SoohyunPARK</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="{% static 'css/landing.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Asap|Indie+Flower" rel="stylesheet">
+</head>
+<body>
+
+<div class="page-header">
+    <h1><a href="/">Welcome to Soohyun's Blog!</a></h1>
+</div>
+
+<div class="education">
+    <h2>Education</h2>
+    {% for sc in sc_list %}
+    <div class="school">
+        <div class="name">
+            <h3>{{sc.scname}}</h3>
+        </div>
+
+        <div class="date">
+           <p> {{sc.start_date}} ~ {{sc.end_date}}</p>
+        </div>
+        <div class="content">
+            <p>Major: {{sc.major}}</p>
+            <p>Second Major: {{sc.second_major}}</p>
+        </div>
+
+    </div>
+    {% endfor %}
+</div>
+
+
+</body>
+</html>
